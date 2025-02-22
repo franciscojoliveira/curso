@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head >
+
+<style>
+    * {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  width: 80%;
+  height: 40px;
+  background: #f1f1f1;
+  top: 20%;
+  right: -50%;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+
+}
+
+/* Style the submit button */
+form.example button {
+  float: center;
+  width: 15%;
+  height: 40px;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+  top: -50%;
+  right: -50%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  transform: translate(-50%,-50);
+
+
+}
+
+form.example button:hover {
+  background: #0b7dda;
+  
+}
+
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+  
+}
+
+form.example {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  border-radius: 10px;
+  
+}
+
+/* Estilo para a div */
+.div-container {
+  position: relative;
+  z-index: 1; /* Certifique-se de que o z-index da div seja menor que o do dropdown */
+}
+
+/* Estilo para o menu dropdown */
+.dp-menu ul ul {
+  position: absolute;
+  z-index: 10; /* Defina um z-index maior para o dropdown */
+  background-color: rgb(15, 14, 14); /* Adicione um fundo para o dropdown */
+  display: none; /* Inicialmente esconda o dropdown */
+}
+
+.dp-menu ul li:hover > ul {
+  display: block; /* Mostre o dropdown ao passar o mouse */
+}
+
+
+
+
+.w3-button {
+  border-radius: 15px; /* Arredonda as bordas do botão w3-button */
+  margin: 15px;
+  height: 40px;
+  padding: 10px;
+  line-height: 17px;
+  
+ 
+  
+}
+
+div.a {
+  text-align: center;
+}
+
+
+</style>
+<body class="w3-light-blue"> 
+    <!--pesquisar-->
+    <form name="frmBusca" method="post" action="pesquisar.php">
+      <input type="text" name="palavra"/>
+      <input type="submit" value="Buscar"/>
+    </form>
+
+    <nav class="dp-menu" >
+     
+        <!-- The form -->
+        <P><form class="example" method="post" action="pesquisar.php" style="margin:auto;max-width:450px">
+          <input type="text" placeholder="Search.." name="palavra" >
+          <button type="submit" onclick="searchData()">  <i class="fa fa-search"></i></button>
+          <a href="cadastrocliente.php"></a>
+        </form></P>
+             <div>
+             <a href="sair.php"  class="w3-display-topright "> 
+              <i class="w3-red w3-button w3-xlarge "> Sair</i>  
+                  
+              </a>  
+             </div>       
+            
+</nav>
+  <nav class="dp-menu"> 
+    <ul>
+      
+        <li>
+            
+            <a href="principal.php" >Página inicial</a>
+
+        </li>
+
+    <li><a href="#">Cadastro</a>
+       <ul>
+           <li><a href="cadastrocliente.php">Cadastro Usuário</a> </li >
+           <li><a href="Listacadastro.php">Lista de Cadastro</a></li>
+           <li><a href="cadastrarsenha.php">Cadastrar Senha</a></li>
+           <li><a href="#">Animes</a></li>
+           <li><a href="#">Séries</a></li>
+           <li><a href="#">Notícias</a></li>
+       </ul>
+    </li>
+
+       <li><a href="#">Produtos</a>
+    <ul>
+        <li><a href="listar.php">produtos</a></li>
+        <li><a href="cadastroproduto.php">cadastro de Produtos</a></li>
+        <li><a href="pesquise.php">Pesquisar Usuário</a></li>
+        <li><a href="#">Animes</a></li>
+        <li><a href="#">Séries</a></li>
+        <li><a href="#">Notícias</a></li>
+    </ul>
+       </li>
+
+        <li><a href="#">Contatos</a>
+            
+        </li>
+
+        <li><a href="#">Quem somos</a>
+            <ul>
+                <li><a href="#">Jogos</a></li>
+                <li><a href="#">filmes</a></li>
+                <li><a href="#">Séries</a></li>
+                <li><a href="#">Animes</a></li>
+                <li><a href="#series">Séries</a></li>
+                <li><a href="#">Notícias</a></li>
+            </ul>
+
+        </li>
+
+        
+                     
+    </li>
+
+    <li><a href="index.php">login</a>
+      
+    </li>
+
+  </li>
+
+  <li><a href="index_copia.php">Novo login</a>
+    
+  </li>
+
+     </ul> 
+     
+   
+  </nav> 
+
+  <div class=" w3-content" id="gradeC">
+    <h2 class="w3-text-black">Grade Curricular</h2>
+    <hr style="width:200px" class="w3-hover-opacity-off">
+    <div class="w3-row w3-row-padding" >
+    <div class="w3-third w3-margin-bottom">
+    <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+    <li class="w3-cyan w3-xlarge w3-padding-32">1º Módulo</li>
+    <li class="w3-padding-16">Linguagem, Trabalho e Tecnologia</li>
+    <li class="w3-padding-16">Programação e Algoritmos</li>
+    <li class="w3-padding-16">Banco de Dados I</li>
+    <li class="w3-padding-16">Análise e Projeto de Sistemas</li>
+    <li class="w3-padding-16">Design Digital</li>
+    <li class="w3-cyan w3-xlarge w3-padding-10">1º Módulo</li>
+    <li class="w3-padding-16">Programação Web I</li>
+    <li class="w3-padding-16">Fundamentos da Informática</li>
+    <li class="w3-padding-16">Técnicas de Programação</li>
+    <li class="w3-padding-16">
+    <span class="w3-xlarge">Total</span>
+    <br>400/h semestre
+    </li>
+    </ul>
+    </div>
+
+    <div class="w3-third">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+        <li class="w3-cyan w3-xlarge w3-padding-32">2º Módulo</li>
+        <li class="w3-padding-16">Inglês Instrumental</li>
+        <li class="w3-padding-16">Desenvolvimento de Sistemas</li>
+        <li class="w3-padding-16">Banco de Dados II</li>
+        <li class="w3-padding-16">Internet e Protocolos</li>
+        <li class="w3-padding-16">Programação de Aplicativos Mobile I</li>
+        <li class="w3-padding-16">Programação Web II</li>
+        <li class="w3-padding-16">Planejamento do Trabalho de Conclusão de
+        <br>em Desenvolvimento de Sistemas
+        <br>
+        </li>
+        <li class="w3-padding-16">
+        <span class="w3-xlarge">Total</span>
+        <br>400/h semestre
+        </li>
+        </ul>
+        </div>
+
+        <div class="w3-third">
+            <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+            <li class="w3-cyan w3-xlarge w3-padding-32">3º Módulo</li>
+            <li class="w3-padding-16">Segurança de Sistemas de Informação</li>
+            <li class="w3-padding-16">Banco de Dados III</li>
+            <li class="w3-padding-16">Sistemas Embarcados</li>
+            <li class="w3-padding-16">Programação de Aplicativos Mobile II</li>
+            <li class="w3-padding-16">Programação Web III</li>
+            <li class="w3-padding-16">Qualidade e Teste de Software</li>
+            <li class="w3-padding-16">Ética e Cidadania Organizacional</li>
+            <li class="w3-padding-16">Desenvolvimento do Trabalho de Conclusão
+                de Curso (TCC)</li>
+                <li class="w3-padding-16">
+                <span class="w3-xlarge">Total</span>
+                <br>400/h semestre
+                </li>
+                </ul>
+                </div>
+                </div>
+                </div>
+                <br>
+  <div class="w3-container w3-padding-32 w3-center   w3-cyan" id="home">
+  <h1>
+    <img src="IMG/php.png"  alt="Logo CPS GEEAD SP" class="w3-image"
+    width="10%">
+    <img src="IMG/Java.png"  alt="Logo CPS GEEAD SP" class="w3-image"
+    width="7%">
+    <img src="IMG/html5.png"  alt="Logo CPS GEEAD SP" class="w3-image"
+    width="6.5%">
+    <img src="IMG/css3.png"  alt="Logo CPS GEEAD SP" class="w3-image"
+    width="6%">
+  </div>
+  
+  <div class="w3-container w3-center w3-light-blue">
+    <div class="w3-third"><h3><p>Desenvolvimento de Sistemas</p><h3></div>
+    <div class="w3-third w3-right"><h3> <p>Sistema de Cadastro</p><h3></div>
+  </div>
+
+    </h1>
+</body>
+<script>
+  var search = document.getElementsByName('search2');
+  function searchData()
+  {
+    window.location = 'listacadastro.php?search'+search.value;
+  }
+</script>
+</html>
